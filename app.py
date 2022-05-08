@@ -107,6 +107,10 @@ def data_insight_cont():
     continent = request.form['continent']
     factorindex = request.form['factor']
     country3 = list(dfcountry2[dfcountry2['index'] == countryindex]['country'])[0]
+    for i in dfcountry2[dfcountry2['country'] == country3]['continent'] :
+        for j in i :
+            if continent in j :
+                continent = j
     if country3 != country2 :
         continent = "World"
         country2 = country3
