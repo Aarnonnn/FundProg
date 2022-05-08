@@ -46,26 +46,26 @@ def death_insight_cont():
     dfagelist['check'] = ageselect
     return render_template('death_insight.html',dfcountry = dfcountry,dfagelist = dfagelist,country = country,age=age)
 
-@app.route('/causeshow')
-def causeshow():
-    global country
-    global age
-    html = country + "_" + age + "_cause.html"
-    return render_template("graph/" + html)
+# @app.route('/causeshow')
+# def causeshow():
+#     global country
+#     global age
+#     html = country + "_" + age + "_cause.html"
+#     return render_template("graph/" + html)
 
-@app.route('/categoryshow')
-def categoryshow():
-    global country
-    global age
-    html = country + "_" + age + "_category.html"
-    return render_template("graph/" + html)
+# @app.route('/categoryshow')
+# def categoryshow():
+#     global country
+#     global age
+#     html = country + "_" + age + "_category.html"
+#     return render_template("graph/" + html)
 
-@app.route('/riskshow')
-def riskshow():
-    global country
-    global age
-    html = country + "_" + age + "_risk.html"
-    return render_template("graph/" + html)    
+# @app.route('/riskshow')
+# def riskshow():
+#     global country
+#     global age
+#     html = country + "_" + age + "_risk.html"
+#     return render_template("graph/" + html)    
 
 # data_insight.html
 
