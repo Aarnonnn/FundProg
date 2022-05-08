@@ -46,26 +46,26 @@ def death_insight_cont():
     dfagelist['check'] = ageselect
     return render_template('death_insight.html',dfcountry = dfcountry,dfagelist = dfagelist,country = country,age=age)
 
-# @app.route('/causeshow')
-# def causeshow():
-#     global country
-#     global age
-#     html = country + "_" + age + "_cause.html"
-#     return render_template("graph/" + html)
+@app.route('/causeshow')
+def causeshow():
+    global country
+    global age
+    html = country + "_" + age + "_cause.html"
+    return render_template("graph/" + html)
 
-# @app.route('/categoryshow')
-# def categoryshow():
-#     global country
-#     global age
-#     html = country + "_" + age + "_category.html"
-#     return render_template("graph/" + html)
+@app.route('/categoryshow')
+def categoryshow():
+    global country
+    global age
+    html = country + "_" + age + "_category.html"
+    return render_template("graph/" + html)
 
-# @app.route('/riskshow')
-# def riskshow():
-#     global country
-#     global age
-#     html = country + "_" + age + "_risk.html"
-#     return render_template("graph/" + html)    
+@app.route('/riskshow')
+def riskshow():
+    global country
+    global age
+    html = country + "_" + age + "_risk.html"
+    return render_template("graph/" + html)    
 
 # data_insight.html
 
@@ -81,6 +81,7 @@ countries = {'Algeria':['World','Africa'], 'Egypt':['World','Africa'], 'Kenya':[
              'Samoa':['World','Oceania'], 'Solomon Islands':['World','Oceania'], 'Tonga':['World','Oceania'],
              'Argentina':['World','South America'], 'Brazil':['World','South America'], 'Colombia':['World','South America'], 
              'Paraguay':['World','South America'], 'Peru':['World','South America'], 'Venezuela (Bolivarian Republic of)':['World','South America']}
+countries = dict(sorted(countries.items()))
 dfcountry2 = pd.DataFrame(countries.items(),columns = ['country','continent'])
 dfcountry2['index'] = [str(i) for i in range(len(dfcountry2))]
 country2 = 'Algeria'
